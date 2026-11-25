@@ -1,0 +1,7 @@
+@extends('layouts.app')
+@section('title', 'Akun saya')
+@section('content')
+<div class="heading"><div><h1>Akun saya <x-help-tooltip label="Informasi Akun saya">Profil ini digunakan di seluruh apotek tempat Anda bergabung.</x-help-tooltip></h1></div></div><div class="two-col"><section class="card padded"><h2>Informasi pribadi</h2><form method="post" action="{{ route('profile.update') }}">@csrf @method('PUT')
+<label>Nama lengkap<input name="name" value="{{ old('name', $user->name) }}" required maxlength="150"></label><label>Email<input value="{{ $user->email }}" readonly><small>Email menjadi identitas akun dan penerima undangan.</small></label><label>Telepon<input name="phone" type="tel" value="{{ old('phone', $user->phone) }}" maxlength="30"></label><button class="btn primary">Simpan profil</button></form></section>
+<section class="card padded"><h2>Keamanan akun</h2><form method="post" action="{{ route('profile.password') }}">@csrf @method('PUT')<label>Password saat ini<input name="current_password" type="password" required autocomplete="current-password"></label><label>Password baru<input name="password" type="password" minlength="12" required autocomplete="new-password"><small>Minimal 12 karakter, berisi huruf dan angka.</small></label><label>Konfirmasi password<input name="password_confirmation" type="password" required autocomplete="new-password"></label><button class="btn primary">Ubah password</button></form></section></div>
+@endsection

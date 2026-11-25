@@ -1,0 +1,15 @@
+@extends('layouts.app')
+@section('title','Draft resep')
+@include('examinations.assets')
+@push('styles')<link rel="stylesheet" href="{{ asset('css/procurement.css') }}">@endpush
+@push('master-scripts')<script src="{{ asset('js/search-select.js') }}" defer></script><script src="{{ asset('js/prescriptions.js') }}?v={{ filemtime(public_path('js/prescriptions.js')) }}" defer></script>@endpush
+@push('styles')<link rel="stylesheet" href="{{ asset('css/prescriptions.css') }}?v={{ filemtime(public_path('css/prescriptions.css')) }}">@endpush
+@section('content')
+<div class="products-page soap-page rx-page"><div class="heading"><div><span class="eyebrow">LAYANAN PASIEN / RESEP</span><h1>Draft resep</h1><p>{{ $visit->patient_name }} · {{ $visit->number }} · {{ $visit->doctor_name }}</p></div><a class="btn" href="{{ route('prescriptions.show',[$currentPharmacy,$visit->id,'prescription'=>$prescription?->id ?? 'new']) }}">Kembali</a></div>@include('partials.clinical-path')
+<p class="clinical-note">Hanya obat aktif yang memerlukan resep. Jumlah memakai satuan dasar dan diperiksa terhadap stok saat finalisasi. Draft tidak menahan stok; SOAP boleh menyusul.</p>
+@if($access->allows('patients.view_clinical'))<div class="clinical-alert"><strong>Alergi master pasien</strong><p>{{ $allergies ?: 'Belum dicatat. Konfirmasikan kepada pasien sebelum meresepkan.' }}</p></div>@endif
+<form method="post" action="{{ route('prescriptions.save',[$currentPharmacy,$visit->id,'prescription'=>$prescription?->id ?? 'new']) }}" autocomplete="off">@csrf @method('PUT')<input type="hidden" name="prescription" value="{{ $prescription?->id ?? 'new' }}"><input type="hidden" name="rx_request_key" value="{{ old('rx_request_key', $rxRequestKey) }}"><input type="hidden" name="revision" value="{{ $prescription?->revision ?? 0 }}"><section class="card"><label>Berlaku sampai <input type="date" name="valid_until" required value="{{ old('valid_until', $prescription->valid_until ?? '') }}"></label><p class="clinical-note">Resep dapat ditebus hingga akhir tanggal ini.</p></section><div id="prescription-items" class="soap-editor-main">
+@foreach(old('items',$payload['items'] ?: [['product_id'=>'','quantity'=>1]]) as $index=>$item)@include('prescriptions.item-form',['index'=>$index,'item'=>$item])@endforeach
+</div><div class="clinical-actions"><button class="btn" type="button" id="add-prescription-item">+ Tambah obat</button></div><section class="card soap-image-editor"><label>Catatan resep<textarea name="notes" maxlength="2000" rows="2">{{ old('notes',$payload['notes']) }}</textarea></label></section><div class="soap-save"><p>Resep tersimpan sebagai draft; obat belum diserahkan dan stok belum dipotong.</p><button class="btn primary" @disabled($products->isEmpty())>Simpan draft resep</button></div></form>
+<template id="prescription-item-template">@include('prescriptions.item-form',['index'=>'__INDEX__','item'=>['product_id'=>'','quantity'=>1]])</template></div>
+@endsection

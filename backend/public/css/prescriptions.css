@@ -1,0 +1,57 @@
+.rx-page .heading{margin-bottom:14px;gap:14px}
+.rx-page .heading h1{font-size:24px;overflow-wrap:anywhere}
+.rx-page .heading .eyebrow{margin-bottom:8px}
+.rx-page .heading p{font-size:12px;overflow-wrap:anywhere}
+.rx-page .clinical-note{padding:10px 14px;margin:0 0 12px;font-size:12px;line-height:1.6}
+.rx-page .clinical-alert{padding:11px 14px;margin-bottom:14px;font-size:12px}
+.rx-page .clinical-alert p{margin:4px 0 0;line-height:1.6}
+.rx-page .soap-editor{grid-template-columns:minmax(0,1fr) 270px;gap:16px}
+.rx-page .soap-editor-main,.rx-page .soap-aside{gap:12px}
+.rx-page .soap-editor .card,.rx-page .rx-item{margin-bottom:0}
+.rx-page .clinical-section{padding:14px 18px}
+.rx-page .clinical-section h2{font-size:14px;margin-bottom:4px}
+.rx-page .clinical-section p{font-size:12px}
+.rx-page .soap-guide{padding:16px 18px}
+.rx-page .soap-guide h2{font-size:14px;margin-bottom:10px}
+.rx-page .soap-guide p{margin:8px 0 12px;line-height:1.65}
+.rx-page .soap-guide form{margin-top:14px;padding-top:12px}
+.rx-page .btn{font-size:12px;padding:9px 13px;min-height:36px}
+.rx-page .btn.small{font-size:11px;padding:6px 9px;min-height:30px}
+.rx-page .product-empty{padding:22px 18px;text-align:left;border-top:0}
+.rx-page .product-empty h2{font-size:15px;margin-bottom:6px}
+.rx-page .product-empty p{max-width:none;margin:0;font-size:12px;line-height:1.65}
+.rx-page .product-table th{padding:11px 16px;font-size:10px}
+.rx-page .product-table td{padding:12px 16px;font-size:12px;vertical-align:top;overflow-wrap:anywhere}
+.rx-page .product-table td strong{font-size:12px}
+.rx-page .product-table td small{font-size:11px;line-height:1.6}
+.rx-page .soap-reading{padding:14px 18px}
+.rx-page .soap-reading p{font-size:12px;line-height:1.7}
+.rx-page .rx-item-header{padding:10px 16px}
+.rx-page .rx-item-header h2{font-size:13px}
+.rx-page .rx-item-header{gap:10px;align-items:center}
+.rx-page .rx-item-overview{flex:1;min-width:0}
+.rx-page .rx-item-overview h2{margin:0}
+.rx-page .rx-item-overview p{margin:4px 0 0;font-size:12px;font-weight:600;line-height:1.6;overflow-wrap:anywhere}
+.rx-page .rx-item-overview small{margin-top:3px;font-size:11px;line-height:1.6;overflow-wrap:anywhere}
+.rx-page .rx-item [hidden]{display:none!important}
+.rx-page .rx-item:has([data-toggle-rx][aria-expanded=false]) .rx-item-header{border-bottom:0}
+@media(max-width:600px){.rx-page .rx-item-header{flex-wrap:wrap}.rx-page .rx-item-overview{flex-basis:100%}}
+.rx-page .rx-item .clinical-fields{grid-template-columns:repeat(6,minmax(0,1fr));padding:14px 16px;gap:12px}
+.rx-page .clinical-fields label{margin:0;min-width:0;font-size:11px}
+.rx-page .clinical-fields .rx-product{grid-column:span 4}
+.rx-page .clinical-fields .rx-quantity,.rx-page .clinical-fields .rx-dose,.rx-page .clinical-fields .rx-frequency{grid-column:span 2}
+.rx-page .clinical-fields input,.rx-page .clinical-fields select{margin-top:6px;min-height:36px;padding:8px 10px;font-size:12px}
+.rx-page .clinical-fields textarea{margin-top:6px;min-height:58px;height:58px;padding:8px 10px;font-size:12px;line-height:1.6}
+.rx-page .clinical-fields .search-choice-trigger{min-height:36px;font-size:12px}
+.rx-page .clinical-actions{padding:12px 0}
+.rx-page .soap-image-editor{padding:14px 16px;margin-bottom:12px}
+.rx-page .soap-image-editor>label{margin:0;gap:6px}
+.rx-page .soap-image-editor textarea{margin:0;min-height:60px;height:60px;font-size:12px}
+.rx-page .soap-save{padding:0;gap:12px}
+.rx-page .soap-save p{max-width:none;font-size:11px;line-height:1.6}
+@media(max-width:1100px){.rx-page .soap-editor{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:750px){.rx-page .rx-item .clinical-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.rx-page .clinical-fields .rx-product,.rx-page .clinical-fields .wide{grid-column:1/-1}.rx-page .clinical-fields .rx-quantity,.rx-page .clinical-fields .rx-dose,.rx-page .clinical-fields .rx-frequency{grid-column:auto}.rx-page .soap-save{align-items:stretch;flex-direction:column}.rx-page .soap-save .btn{align-self:flex-end}}
+@media(max-width:420px){.rx-page .rx-item .clinical-fields{grid-template-columns:minmax(0,1fr)}.rx-page .heading h1{font-size:21px}}
+
+.rx-page .rx-stock-warning{color:#a2433e;font-weight:600}
+.rx-collection{margin:0 0 22px;overflow:hidden}.rx-collection header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;border-bottom:1px solid var(--border)}.rx-collection h2{margin:0;font-size:16px}.rx-collection h2 span{color:var(--muted);font-weight:400}.rx-collection p{margin:6px 0 0;font-size:12px;color:var(--muted)}.rx-collection nav{display:flex;flex-wrap:wrap;gap:10px;padding:16px 22px}.rx-collection nav a{display:grid;gap:5px;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:12px}.rx-collection nav a[aria-current=page]{border-color:var(--primary);background:#edf6f1;color:var(--primary)}.rx-collection nav a span,.rx-new-selection{font-size:12px;color:var(--muted)}.rx-new-selection{padding:10px 0}@media(max-width:680px){.rx-collection header{align-items:flex-start;flex-direction:column}.rx-collection nav a{width:100%;overflow-wrap:anywhere}}

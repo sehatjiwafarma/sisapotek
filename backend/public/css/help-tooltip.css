@@ -1,0 +1,7 @@
+.help-tooltip { display:inline-flex; vertical-align:middle; flex:0 0 auto; }
+.help-tooltip-trigger { width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center; padding:4px; border:1px solid transparent; border-radius:7px; background:#f0f5f2; color:#6c897b; cursor:help; }
+.help-tooltip-trigger:hover,.help-tooltip-trigger:focus-visible { background:#e6f1eb; color:#18765b; border-color:#cce1d4; }
+.help-tooltip-trigger svg { width:18px; height:18px; }
+.help-tooltip-content { position:fixed; inset:auto; margin:0; width:max-content; max-width:min(340px, calc(100vw - 24px)); max-height:calc(100dvh - 24px); overflow:auto; padding:12px 15px; border:1px solid #31564a; border-radius:9px; background:#23463b; color:#fff; box-shadow:0 8px 24px #14372b26; font:400 12px/1.7 'DM Sans',system-ui,sans-serif; text-align:left; overflow-wrap:anywhere; }
+
+.help-heading{display:flex;align-items:center;gap:8px;min-width:0}.help-heading h2,.help-heading h3{margin:0!important}.dispensing-expiry-status{display:flex;align-items:center;gap:8px;margin:0 0 12px}.dispensing-intro .help-tooltip{margin-left:4px}

@@ -1,0 +1,126 @@
+.encounter-page{max-width:1180px;margin:0 auto;padding-bottom:24px;color:var(--text,#20382e)}
+.encounter-page .heading{margin-bottom:12px;gap:20px;align-items:center}
+.encounter-page .heading h1{font-size:28px;line-height:1.3;letter-spacing:-.5px}
+.encounter-page .heading p{font-size:14px;line-height:1.7}
+.encounter-back{display:inline-block;font-size:13px;margin:0 0 20px}
+.encounter-page .soap-patient{padding:22px 24px;margin-bottom:16px;border-left:4px solid var(--primary)}
+.encounter-page .soap-patient>div{display:grid;gap:6px}
+.encounter-page .soap-patient h2{font-size:20px;line-height:1.4}
+.encounter-page .soap-patient p{font-size:14px}
+.encounter-page .soap-patient .eyebrow{font-size:12px}
+.encounter-page .clinical-alert{padding:16px 20px;margin-bottom:20px}
+.encounter-page .clinical-alert strong,.encounter-page .clinical-alert p{font-size:14px;line-height:1.7}
+.encounter-navigation{display:flex;gap:8px;flex-wrap:wrap;padding:8px;background:#fff;border:1px solid var(--border);border-radius:12px;margin:0 0 24px}
+.encounter-navigation a{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:8px;font-size:14px;font-weight:600;color:var(--primary);text-decoration:none}
+.encounter-navigation a:hover,.encounter-navigation a:focus-visible{background:var(--soft)}
+.encounter-navigation a>span{font-size:12px;color:var(--muted)}
+.encounter-navigation small{font-size:12px;font-weight:400;color:var(--muted)}
+.encounter-page .encounter-section{background:#fff;margin-top:24px;border:1px solid var(--border);border-radius:14px;scroll-margin-top:24px}
+.encounter-page .encounter-section>.clinical-section{padding:22px 26px;border-bottom:1px solid var(--border);background:#f3f8f5}
+.encounter-page .encounter-section>.clinical-section h2{font-size:18px;margin:0 0 7px;line-height:1.4}
+.encounter-page .encounter-section>.clinical-section p{font-size:14px;line-height:1.75;margin:0;max-width:850px;white-space:pre-wrap;overflow-wrap:anywhere}
+.encounter-page .encounter-section>.soap-compact-form{padding:24px;gap:20px}
+.encounter-page .soap-compact-vitals{padding:20px;background:#f8faf9;box-shadow:none}
+.encounter-page .soap-compact-vitals>header{display:block;margin-bottom:18px}
+.encounter-page .soap-compact-vitals h2{font-size:15px;margin-bottom:6px}
+.encounter-page .soap-compact-vitals header p{font-size:13px;line-height:1.7}
+.encounter-page .soap-vital-inputs{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.encounter-page .soap-vital-inputs label{font-size:13px;gap:8px;min-width:0}
+.encounter-page .soap-vital-inputs small{font-size:12px;color:var(--muted)}
+.encounter-page .soap-vital-inputs input{min-height:44px;padding:10px 12px;font-size:15px}
+.encounter-page .soap-urine{grid-column:1/-1}
+.encounter-page .soap-urine textarea{width:100%;min-height:76px;font-size:14px;line-height:1.75;resize:vertical;margin:0}
+.encounter-page input[readonly],.encounter-page textarea[readonly]{background:#eef3f0;border-color:#dce6df;color:#354d41}
+.encounter-documentation{grid-column:1/-1;border:1px solid var(--border);border-radius:10px;min-width:0}
+.encounter-documentation>summary{padding:16px 18px;cursor:pointer;font-size:14px;font-weight:600;color:var(--primary);line-height:1.6}
+.encounter-documentation>summary span{display:block;font-size:13px;font-weight:400;color:var(--muted);padding-left:18px}
+.encounter-documentation[open]>summary{border-bottom:1px solid var(--border)}
+.encounter-documentation .card{border:0;border-radius:0;box-shadow:none;margin:0}
+.encounter-page .soap-compact-field{padding:20px;border:1px solid var(--border);box-shadow:none}
+.encounter-page .soap-compact-field>label{font-size:15px;gap:10px;margin-bottom:14px;line-height:1.5}
+.encounter-page .soap-letter{width:30px;height:30px;font-size:14px}
+.encounter-page .soap-compact-field textarea{min-height:160px;height:160px;padding:13px 14px;font-size:15px;line-height:1.8}
+.encounter-page .soap-compact-field textarea::placeholder{font-size:14px;color:#6b7d73}
+.encounter-page .soap-followup textarea{height:92px;min-height:92px}
+.encounter-page .rx-item{margin:0;border:1px solid var(--border);box-shadow:none;min-width:0}
+.encounter-page .rx-item-header{padding:16px 20px;background:#fafcfb}
+.encounter-page .rx-item-header h2{font-size:14px}
+.encounter-page .rx-item-overview p{font-size:15px;line-height:1.6}
+.encounter-page .rx-item-overview small{font-size:13px}
+.encounter-page .rx-item .clinical-fields{grid-template-columns:repeat(4,minmax(0,1fr));padding:20px;gap:20px;align-items:start}
+.encounter-page .clinical-fields label{font-size:14px;line-height:1.5}
+.encounter-page .clinical-fields .rx-product{grid-column:span 3}
+.encounter-page .clinical-fields .rx-quantity{grid-column:span 1}
+.encounter-page .clinical-fields .rx-dose,.encounter-page .clinical-fields .rx-frequency,.encounter-page .clinical-fields .rx-route,.encounter-page .clinical-fields .rx-duration{grid-column:span 2}
+.encounter-page .clinical-fields input,.encounter-page .clinical-fields select,.encounter-page .clinical-fields .search-choice-trigger{min-height:44px;font-size:14px;padding:10px 12px}
+.encounter-page .clinical-fields textarea{min-height:90px;height:90px;font-size:14px;line-height:1.75;padding:12px}
+.encounter-page .clinical-fields small{font-size:12px;line-height:1.7}
+.encounter-page .rx-page>.clinical-actions{padding:20px 24px}
+.encounter-page .rx-page>.soap-image-editor{margin:0 24px 24px;padding:20px;background:#f8faf9;border:1px solid var(--border);box-shadow:none}
+.encounter-page .rx-page>.soap-image-editor>label{font-size:14px}
+.encounter-page .rx-page>.soap-image-editor textarea{font-size:14px;line-height:1.75;min-height:90px}
+.encounter-page .btn{font-size:14px;min-height:42px;padding:10px 16px}
+.encounter-page .btn.small{font-size:13px;min-height:36px;padding:7px 12px}
+.encounter-page .encounter-save{position:sticky;bottom:16px;z-index:5;margin-top:20px;padding:18px 24px;gap:20px;background:#fff;border:1px solid #b9d0c2;border-radius:12px;box-shadow:0 6px 24px #20382e12}
+.encounter-page .encounter-save>div{display:block;flex-shrink:1}
+.encounter-page .encounter-save strong{font-size:14px;display:block;margin-bottom:5px}
+.encounter-page .encounter-save p{max-width:none;font-size:13px;line-height:1.7}
+.encounter-page .encounter-save .btn{flex-shrink:0}
+.encounter-page #finalisasi>.clinical-actions{padding:22px 24px;gap:14px}
+.encounter-page .soap-reading p{font-size:15px;line-height:1.85}
+.encounter-page .soap-reading h3{font-size:14px}
+.encounter-page .soap-vitals dt{font-size:13px}
+.encounter-page .soap-vitals dd{font-size:15px;line-height:1.7}
+.encounter-page>.card{margin-top:24px}
+.encounter-page .encounter-rx-body{padding:24px;display:grid;gap:20px;min-width:0}
+.encounter-page .encounter-rx-body #prescription-items{display:grid;gap:16px;min-width:0}
+.encounter-page .encounter-rx-body #prescription-items:empty{display:none}
+.encounter-page .encounter-rx-body>.clinical-actions{padding:0;margin:0;gap:12px}
+.encounter-page .encounter-rx-body>.soap-image-editor{padding:20px;margin:0;background:#f8faf9;border:1px solid var(--border);box-shadow:none}
+.encounter-page .encounter-rx-body>.soap-image-editor>label{margin:0;display:grid;gap:10px;font-size:14px}
+.encounter-page .encounter-rx-body>.soap-image-editor textarea{margin:0;min-height:90px;font-size:14px;line-height:1.75}
+.encounter-page .rx-item-header{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px;align-items:center}
+.encounter-page .rx-item-overview{min-width:0}
+.encounter-page .rx-item-overview p:empty,.encounter-page .rx-item-overview small:empty{display:none}
+.encounter-page .rx-item .clinical-fields label{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin:0;min-width:0}
+.encounter-page .rx-item .clinical-fields input,.encounter-page .rx-item .clinical-fields select,.encounter-page .rx-item .clinical-fields textarea,.encounter-page .rx-item .clinical-fields .search-choice-trigger{margin:0;width:100%;min-width:0;box-sizing:border-box}
+.encounter-page .rx-item .clinical-fields .search-choice-trigger{line-height:1.5;white-space:normal;overflow-wrap:anywhere}
+.encounter-page .rx-item [data-rx-stock]{margin:0;line-height:1.6}
+.encounter-page .rx-item .clinical-fields .wide{grid-column:1/-1}
+.encounter-page>section.card:not(.soap-patient){margin-top:24px}
+@media(max-width:420px){.encounter-page .encounter-section.rx-page .rx-item .clinical-fields{grid-template-columns:minmax(0,1fr)}.encounter-page .clinical-fields .rx-product,.encounter-page .clinical-fields .wide{grid-column:1/-1}}
+@media(max-width:900px){.encounter-page .soap-compact-form{grid-template-columns:1fr}.encounter-page .rx-item .clinical-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.encounter-page .clinical-fields .rx-product{grid-column:1/-1}.encounter-page .clinical-fields .rx-quantity,.encounter-page .clinical-fields .rx-dose,.encounter-page .clinical-fields .rx-frequency,.encounter-page .clinical-fields .rx-route,.encounter-page .clinical-fields .rx-duration{grid-column:auto}}
+@media(max-width:600px){.encounter-page .heading{align-items:flex-start;flex-direction:column}.encounter-page .heading h1{font-size:24px}.encounter-navigation{gap:0}.encounter-navigation a{flex:1 1 100%;padding:10px 12px}.encounter-page .encounter-section>.clinical-section{padding:18px}.encounter-page .encounter-section>.soap-compact-form{padding:14px;gap:16px}.encounter-page .soap-vital-inputs{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.encounter-page .soap-compact-vitals,.encounter-page .soap-compact-field{padding:16px}.encounter-page .rx-item{margin:16px 14px}.encounter-page .rx-item .clinical-fields{padding:16px}.encounter-page .rx-page>.clinical-actions{padding:16px}.encounter-page .rx-page>.soap-image-editor{margin:0 14px 16px;padding:16px}.encounter-page .encounter-save{bottom:8px;padding:16px;flex-direction:column;align-items:stretch}.encounter-page .encounter-save .btn{width:100%;white-space:normal}.encounter-page .encounter-save p{display:none}.encounter-page .clinical-fields .wide{grid-column:1/-1}}
+@media(max-width:600px){.encounter-page .encounter-rx-body{padding:16px;gap:16px}.encounter-page .encounter-rx-body #prescription-items{gap:16px}.encounter-page .encounter-rx-body .rx-item{margin:0}.encounter-page .encounter-rx-body>.soap-image-editor{padding:16px}.encounter-page .rx-item-header{grid-template-columns:minmax(0,1fr) auto;gap:12px}.encounter-page .rx-item-overview{grid-column:1/-1}.encounter-page .rx-item-header .btn{justify-self:start}.encounter-page .encounter-section>.soap-compact-form{padding:16px}}
+.encounter-page .encounter-section{margin-top:16px;margin-bottom:0}
+.encounter-page .encounter-section>.clinical-section{padding:14px 20px}
+.encounter-page .encounter-section>.clinical-section h2{margin-bottom:4px}
+.encounter-page .encounter-section>.clinical-section p{max-width:none;line-height:1.6}
+.encounter-page .encounter-section>.soap-compact-form{padding:16px 20px;gap:12px}
+.encounter-page .soap-compact-form>.card{margin:0}
+.encounter-page #soap>.clinical-restricted{margin:0;padding:12px 20px;font-size:13px;line-height:1.6}
+.encounter-page #soap>.clinical-restricted+.soap-compact-form{padding-top:0}
+.encounter-page .soap-compact-vitals{padding:16px}
+.encounter-page .soap-compact-vitals>header{margin-bottom:12px}
+.encounter-page .soap-vital-inputs{gap:12px}
+.encounter-page .encounter-documentation{margin:0}
+.encounter-page .encounter-documentation>summary{margin:0;padding:12px 16px}
+.encounter-page .encounter-documentation>summary span{display:inline;padding:0;margin-left:10px;font-size:12px}
+.encounter-page .encounter-rx-body{padding:16px 20px;gap:12px}
+.encounter-page .encounter-rx-body #prescription-items:not(:has(>.rx-item)){display:none}
+.encounter-page .encounter-rx-body .rx-item{margin:0}
+.encounter-page .encounter-rx-body>.soap-image-editor{margin:0;padding:16px}
+.encounter-page .encounter-save{margin-top:16px;padding:14px 20px}
+.encounter-page #finalisasi>.clinical-actions{padding:16px 20px}
+.encounter-page>section.card:not(.soap-patient){margin-top:16px;margin-bottom:0}
+@media(max-width:600px){.encounter-page .encounter-section>.clinical-section,.encounter-page .encounter-section>.soap-compact-form,.encounter-page .encounter-rx-body{padding:14px}.encounter-page .encounter-documentation>summary span{display:block;margin-left:18px}.encounter-page #soap>.clinical-restricted{padding:10px 14px}}
+
+.encounter-page [hidden]{display:none!important}.encounter-navigation a[aria-current="page"]{background:var(--soft);color:var(--primary);box-shadow:inset 0 -3px var(--primary)}.encounter-history{margin-top:20px}.encounter-history>summary{cursor:pointer;padding:16px;background:#fff;border:1px solid var(--border);border-radius:10px;font-weight:600}.encounter-history>section{margin-top:12px}
+
+.encounter-review{display:flex;flex-wrap:wrap;gap:12px;padding:16px 20px 0}.encounter-review>div{flex:1 1 180px;padding:14px;background:#f3f8f5;border-radius:8px}.encounter-review strong,.encounter-review span{display:block}.encounter-review span{margin-top:6px;font-size:13px;color:var(--muted)}
+
+.encounter-page .encounter-rx-validity{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin:0;padding:14px 20px;color:var(--muted);font-size:13px;line-height:1.5}.encounter-page .encounter-rx-validity strong{color:var(--text);font-weight:600}@media(max-width:600px){.encounter-page .encounter-rx-validity{padding:14px}}
+
+.encounter-page .encounter-rx-body>.encounter-rx-expiry{padding:16px;margin:0;background:#f8faf9;box-shadow:none}.encounter-page .encounter-rx-expiry label{display:grid;gap:8px;margin:0;font-size:14px}.encounter-page .encounter-rx-expiry input{width:100%;box-sizing:border-box;margin:0}.encounter-page .encounter-rx-expiry .clinical-note{margin:8px 0 0;padding:0;border:0;background:transparent;color:var(--muted);line-height:1.6}.encounter-page .encounter-rx-body>.soap-image-editor textarea{box-sizing:border-box;width:100%}@media(max-width:600px){.encounter-page .encounter-rx-body>.encounter-rx-expiry{padding:14px}}
+
+.encounter-page .heading{margin-bottom:10px}.encounter-page .encounter-back{display:block;width:fit-content;margin:0 0 14px;line-height:1.5}.encounter-page .soap-patient{padding:16px 20px;margin:0 0 12px}.encounter-page .soap-patient>div{gap:4px}.encounter-page .soap-patient h2,.encounter-page .soap-patient p{margin:0}.encounter-page .clinical-alert{padding:12px 16px;margin:0 0 12px}.encounter-page .clinical-alert p{margin:4px 0 0}.encounter-page .encounter-navigation{margin:0 0 16px;padding:6px}.encounter-page .encounter-navigation a{padding:10px 14px}@media(max-width:600px){.encounter-page .soap-patient{padding:14px 16px}.encounter-page .clinical-alert{padding:12px 14px}.encounter-page .encounter-navigation a{padding:10px 12px}}

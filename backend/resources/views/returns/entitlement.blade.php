@@ -1,0 +1,8 @@
+@if($rx)
+<section class="card return-audit"><h2>Pengembali & hak tebus</h2>@if($returner)<p>Pengembali: <strong>{{ $returner['name'] }}</strong> · {{ $returner['type'] === 'self' ? 'Pasien sendiri' : $returner['relationship'].' · '.$returner['phone'] }}</p>@endif
+@if($record->entitlement_restored_at)<p><span class="badge">Hak tebus dipulihkan</span></p><p>{{ \Illuminate\Support\Carbon::parse($record->entitlement_restored_at)->timezone($currentPharmacy->timezone ?: 'Asia/Jakarta')->format('d/m/Y H:i') }} · {{ $actors[$record->entitlement_restored_by] ?? '—' }}</p><p class="return-text">{{ $entitlementReason }}</p><p>Jumlah yang dipulihkan sesuai obat pada retur ini. Penebusan berikutnya tetap memeriksa sisa resep dan stok.</p>
+@else<p>Hak tebus pasien tidak bertambah akibat retur atau refund ini.</p>
+@if($record->status === 'COMPLETED' && $access->allows('returns.restore_entitlement') && $currentPharmacy->status === 'ACTIVE')
+<details class="return-entitlement"><summary>Persetujuan khusus pemulihan hak tebus</summary><form method="post" action="{{ route('returns.restore_entitlement',[$currentPharmacy,$record->id]) }}" data-confirm="Pulihkan hak tebus untuk seluruh jumlah obat pada retur ini? Pasien dapat menebus kembali jumlah tersebut. Tindakan ini tidak menambah stok atau refund dan dicatat satu kali." data-confirm-title="Setujui pemulihan hak tebus" data-confirm-label="Pulihkan hak tebus">@csrf<input type="hidden" name="revision" value="{{ $record->revision }}"><label>Alasan persetujuan *<textarea name="reason" maxlength="1000" rows="2" required>{{ old('reason') }}</textarea></label><button class="btn primary">Setujui pemulihan hak tebus</button></form></details>
+@endif @endif</section>
+@endif

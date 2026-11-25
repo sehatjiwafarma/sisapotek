@@ -1,0 +1,5 @@
+<section class="card rx-collection" aria-label="Daftar resep pemeriksaan">
+    <header><div><h2>Resep pemeriksaan <span>({{ $prescriptions->count() }})</span></h2><p>Setiap resep memiliki nomor dan penebusan tersendiri.</p></div>@if($canWrite && $access->allows('prescriptions.create'))<a class="btn primary" href="{{ route($rxListRoute, [$currentPharmacy, $visit->id, 'prescription' => 'new']) }}#resep">+ Buat resep baru</a>@endif</header>
+    <nav aria-label="Pilih resep">@foreach($prescriptions as $record)<a href="{{ route($rxListRoute, [$currentPharmacy, $visit->id, 'prescription' => $record->id]) }}#resep" @if($prescription?->id === $record->id) aria-current="page" @endif><strong>{{ $record->number }}</strong><span>{{ $record->status === 'FINAL' || $record->ready_at ? 'Tersimpan' : 'Belum siap' }}</span></a>@endforeach
+    @if(!$prescription)<span class="rx-new-selection">{{ request('prescription') === 'new' ? 'Resep baru · belum disimpan' : 'Belum ada resep tersimpan' }}</span>@endif</nav>
+</section>

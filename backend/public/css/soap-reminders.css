@@ -1,0 +1,23 @@
+.soap-reminder-card { display:flex; justify-content:space-between; align-items:center; gap:24px; padding:24px; margin:0 0 24px; background:#fff9eb; border:1px solid #eddeb7; border-radius:12px; }
+.soap-reminder-card .eyebrow { color:#8b672c; }
+.soap-reminder-card h2 { margin:8px 0; font-size:17px; line-height:1.5; }
+.soap-reminder-card p { margin:0; font-size:13px; color:#746342; }
+.soap-notifications { position:relative; }
+.soap-notifications > summary { display:flex; align-items:center; justify-content:center; gap:5px; min-width:40px; min-height:40px; padding:8px; margin:0; list-style:none; border:1px solid var(--border); border-radius:8px; background:white; color:var(--primary); cursor:pointer; }
+.soap-notifications > summary::-webkit-details-marker { display:none; }
+.soap-notifications > summary:focus-visible { outline:2px solid var(--primary); outline-offset:3px; }
+.soap-notification-count { display:inline-grid; place-items:center; min-width:18px; height:18px; padding:0 4px; border-radius:10px; background:#a83f32; color:white; font-size:10px; font-weight:700; }
+.soap-notification-panel { position:absolute; right:0; top:calc(100% + 10px); width:330px; max-width:calc(100vw - 32px); max-height:70vh; overflow-y:auto; padding:0; background:white; border:1px solid var(--border); border-radius:12px; box-shadow:0 12px 36px #243b3326; z-index:50; }
+.soap-notification-heading { display:flex; justify-content:space-between; gap:10px; padding:16px; border-bottom:1px solid var(--border); }
+.soap-notification-heading span { color:var(--muted); font-size:11px; }
+.soap-notification-panel .soap-notification-item { display:grid; gap:5px; padding:13px 16px; color:var(--text); border-bottom:1px solid var(--border); }
+.soap-notification-item:hover { background:var(--soft); }
+.soap-notification-item span { font-size:11px; color:var(--muted); }
+.soap-notification-empty { padding:0 16px; color:var(--muted); }
+.soap-notification-all { display:block; padding:14px 16px; font-weight:600; }
+.soap-overdue { color:#a33e2e; font-size:11px; font-weight:600; }
+@media(max-width:680px) {
+    .soap-reminder-card { align-items:flex-start; flex-direction:column; gap:16px; padding:20px; }
+    .soap-notification-panel { position:fixed; top:auto; right:16px; left:16px; margin-top:10px; width:auto; }
+}
+@media print { .soap-notifications { display:none; } }

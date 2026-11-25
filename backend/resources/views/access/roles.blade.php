@@ -1,0 +1,8 @@
+@extends('layouts.app')
+@section('title', 'Role & izin')
+@section('content')
+<div class="heading"><div><h1>Role & izin <x-help-tooltip label="Informasi Role & izin">Susun hak akses sesuai tanggung jawab tim di apotek ini.</x-help-tooltip></h1></div>@if($access->allows('roles.create'))<a class="btn primary" href="{{ route('roles.create', $currentPharmacy) }}">+ Tambah role</a>@endif</div><section class="card"><div class="table-wrap"><table><thead><tr><th>NAMA ROLE</th><th>IZIN</th><th>PENGGUNA</th><th>AKSI</th></tr></thead><tbody>@foreach($roles as $role)<tr><td><strong>{{ $role->name }}</strong><small>{{ $role->description }}</small></td><td data-sort-value="{{ $role->is_owner ? count(\App\Support\Permissions::all()) : count($role->permissions) }}">{{ $role->is_owner ? 'Seluruh fungsi · dilindungi' : count($role->permissions).' fungsi' }}</td><td>{{ $role->memberships_count }}</td><td><div class="actions">@if(!$role->is_owner && app(\App\Services\AccessManager::class)->grantable($access, $role))
+@if($access->allows('roles.update'))<a class="btn small" href="{{ route('roles.edit', [$currentPharmacy, $role]) }}">Ubah izin</a>@endif
+@if($access->allows('roles.delete'))<form method="post" action="{{ route('roles.delete', [$currentPharmacy, $role]) }}" data-confirm="Hapus role ini? Role yang masih digunakan tidak dapat dihapus.">@csrf @method('DELETE')<button class="btn small danger">Hapus</button></form>@endif
+@endif</div></td></tr>@endforeach</tbody></table></div></section><div class="notice">Role dibuat khusus untuk apotek ini. Izin pengguna merupakan gabungan role yang diberikan; aksi tanpa izin ditolak oleh server.</div>
+@endsection

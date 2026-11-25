@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sehat Jiwa Farma — Sistem Informasi Apotek</title>
+  <meta name="description" content="Prototipe interaktif sistem informasi apotek: persediaan, layanan pasien, pembelian dan kasir.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="clinical.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a href="#dashboard" class="brand"><span class="brand-mark">✚</span><span>Sehat Jiwa<span class="brand-light">Farma</span><small>SISTEM INFORMASI APOTEK</small></span></a>
+    <div class="outlet"><span class="outlet-icon">⌂</span><div><strong>Sehat Jiwa Farma Utama</strong><small>Outlet utama · Bandung</small></div><span class="online"></span></div>
+    <div class="nav-caption">WORKSPACE</div><nav id="navigation" aria-label="Navigasi utama"></nav>
+    <div class="sidebar-bottom"><div class="help-card"><span>✧</span><strong>Operasional lebih teratur.</strong><p>Kelola apotek dalam satu tempat.</p><button class="help-link" id="guide">Panduan penggunaan <span>↗</span></button></div><button class="profile" id="profile"><span class="avatar">RF</span><span><strong>Rofi Firdaus</strong><small>Administrator</small></span><span>⌄</span></button></div>
+  </aside>
+  <div class="workspace"><header class="topbar"><div class="breadcrumb"><button class="icon-btn mobile-menu" id="menu" aria-label="Buka navigasi">☰</button><span>Workspace</span><span class="slash">/</span><strong id="breadcrumb">Dashboard</strong></div><div class="top-actions"><span class="demo-label">DATA DEMO</span><span class="today">Rabu, 28 Oktober 2026</span><button class="icon-btn notification" id="notifications" aria-label="Notifikasi stok">♧<i></i></button><span class="top-avatar">RF</span></div></header><main id="main" tabindex="-1"></main><footer>© 2026 Sehat Jiwa Farma <span>Prototipe UI v1.0 · Data simulasi · Asia/Jakarta</span></footer></div>
+  <div id="modal-root"></div><div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+  <script src="clinical.js"></script>
+</body>
+</html>

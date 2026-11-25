@@ -1,0 +1,5 @@
+@extends('layouts.app')
+@section('title', 'Audit aktivitas')
+@section('content')
+<div class="heading"><div><h1>Audit aktivitas</h1><p>Jejak perubahan akses di {{ $currentPharmacy->name }}. Waktu ditampilkan dalam WIB.</p></div></div><section class="card"><div class="table-wrap"><table data-table-sort="server" data-sort-columns="time,actor,action,subject" data-sort-default="time" data-sort-default-direction="desc"><thead><tr><th>WAKTU</th><th>PELAKU</th><th>AKSI</th><th>OBJEK & RINCIAN</th></tr></thead><tbody>@forelse($entries as $entry)<tr><td>{{ \Illuminate\Support\Carbon::parse($entry->created_at, 'UTC')->timezone('Asia/Jakarta')->format('d/m/Y H:i:s') }}</td><td>{{ $entry->actor_name ?? 'Sistem' }}</td><td><span class="code-chip">{{ $entry->action }}</span></td><td>{{ $entry->subject }}<details><summary>Lihat perubahan</summary><pre>{{ json_encode(json_decode($entry->details), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) }}</pre></details></td></tr>@empty<tr><td class="empty" colspan="4">Belum ada aktivitas.</td></tr>@endforelse</tbody></table></div><div class="pagination">{{ $entries->links('partials.pagination') }}</div></section>
+@endsection

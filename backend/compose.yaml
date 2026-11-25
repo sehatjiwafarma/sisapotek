@@ -1,0 +1,34 @@
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - .:/app
+      - vendor:/app/vendor
+      - ./php.ini:/usr/local/etc/php/conf.d/apotek.ini:ro
+    environment:
+      DB_CONNECTION: pgsql
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_DATABASE: apotek
+      DB_USERNAME: apotek
+      DB_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in .env}
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: apotek
+      POSTGRES_USER: apotek
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in .env}
+    volumes:
+      - apotek-db:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U apotek -d apotek"]
+      interval: 5s
+      retries: 10
+volumes:
+  apotek-db:
+  vendor:

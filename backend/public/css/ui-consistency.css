@@ -1,0 +1,57 @@
+﻿/* Consistent controls and action alignment across application modules. */
+@media screen {
+  :root {
+    --control-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2352695c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  }
+
+  select:not([multiple]):not([size]) {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: var(--control-chevron);
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px 16px;
+    padding-right: 38px;
+    text-overflow: ellipsis;
+  }
+  select:not([multiple]):not([size]):disabled { opacity: .7; cursor: not-allowed; }
+  .search-choice-trigger { min-width: 0; text-align: left; }
+  .search-choice-trigger::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    background: var(--control-chevron) center / 16px 16px no-repeat;
+  }
+  .search-choice-trigger[aria-expanded='true']::after { transform: rotate(180deg); }
+
+  .btn { min-height: 42px; vertical-align: middle; }
+  .btn.small { min-height: 36px; }
+  .btn svg { flex: 0 0 auto; }
+  .heading > :first-child, .heading .actions, .toolbar > label,
+  .clinical-actions, .proc-action-bar, .op-actions { min-width: 0; }
+  .heading > :first-child { flex: 1 1 auto; }
+  .heading > .actions { flex: 0 1 auto; align-items: center; }
+  .actions, .clinical-actions, .proc-action-bar, .op-actions {
+    align-items: center;
+  }
+  .actions > form, .clinical-actions > form, .proc-action-bar > form,
+  .op-actions > form, .top-actions > form { margin: 0; }
+  .toolbar { row-gap: 12px; }
+  .toolbar > label { margin-bottom: 0; }
+  .table-wrap { max-width: 100%; }
+  .table-wrap td .actions { min-width: max-content; }
+
+  @media (max-width: 680px) {
+    .heading > :first-child { flex-basis: 100%; }
+    .heading > .actions { flex: 1 1 100%; justify-content: flex-start; }
+    .heading > .btn { max-width: 100%; white-space: normal; text-align: center; }
+    .toolbar > label { flex: 1 1 180px; }
+    .toolbar > .btn { flex: 0 0 auto; }
+    .clinical-actions, .proc-action-bar, .op-actions { flex-wrap: wrap; }
+  }
+  @media (forced-colors: active) {
+    select:not([multiple]):not([size]) { appearance: auto; background-image: none; padding-right: 12px; }
+    .search-choice-trigger::after { background: none; content: '⌄'; }
+  }
+}

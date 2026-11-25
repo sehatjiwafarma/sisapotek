@@ -1,0 +1,20 @@
+@page { size:A4 portrait; margin:12mm; }
+* { box-sizing:border-box; }
+body { margin:0; color:#111; background:#eef1ef; font:12px Arial,sans-serif; line-height:1.4; }
+.print-toolbar { max-width:148mm; margin:16px auto; display:flex; align-items:center; gap:14px; padding:0 12px; }
+.print-toolbar button { padding:10px 20px; border:0; border-radius:6px; background:#176b54; color:white; cursor:pointer; }
+.print-toolbar span { font-size:11px; color:#52695c; }
+.prescription-sheet { width:148mm; min-height:210mm; padding:8mm; margin:0 auto 24px; background:white; box-shadow:0 3px 18px #0001; }
+.letterhead { position:relative; text-align:center; border-bottom:1.5px solid #111; padding-bottom:8px; margin-bottom:10px; }
+h1 { font-size:17px; margin:0 0 5px; text-transform:uppercase; letter-spacing:.5px; }
+h2 { font-size:12px; margin:10px 0 0; letter-spacing:1px; } .letterhead p { margin:2px 0; font-size:11px; }
+.identity { margin:0 0 12px; }.identity > div { display:grid; grid-template-columns:33mm minmax(0,1fr); gap:6px; padding:2px 0; }
+.identity dt { margin:0; } .identity dd { position:relative; margin:0; padding-left:8px; overflow-wrap:anywhere; }.identity dd::before { content:':'; position:absolute; left:0; }.identity .identity-gap { margin-top:7px; }
+table { width:100%; border-collapse:collapse; }.medicines { border-top:1px solid #111; }.medicines th { border-bottom:1px solid #111; text-align:left; padding:5px 0; font-size:11px; }.medicines td { padding:10px 0; vertical-align:top; }.medicines .quantity { width:21mm; text-align:right; padding-left:8px; }.quantity span { font-size:11px; }.drug-name { display:flex; gap:8px; }.rx { flex:0 0 18px; font-style:italic; }.directions { padding-left:26px; margin-top:5px; font-size:11px; white-space:pre-wrap; overflow-wrap:anywhere; }.drug-name strong { overflow-wrap:anywhere; }
+.notes { border-top:1px dashed #aaa; padding-top:7px; font-size:11px; }.notes p { margin:3px 0; white-space:pre-wrap; overflow-wrap:anywhere; }
+.sign-off { margin-top:18px; }
+.signatures { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:12px; text-align:center; }.signatures p { margin:4px 0; }.signature-space { height:42mm; }.qr-code { display:block; width:44mm; height:44mm; margin:0 auto 5px; image-rendering:pixelated; }.doctor-signature { display:block; max-width:32mm; max-height:15mm; margin:4px auto; }.doctor-name { font-weight:bold; text-decoration:underline; overflow-wrap:anywhere; }small { font-size:10px; overflow-wrap:anywhere; }.qr-caption { text-align:center; font-size:9px; margin:12px 0 0; color:#444; }
+@media(max-width:560px) { body { background:#fff; }.prescription-sheet { width:100%; padding:16px; box-shadow:none; }.print-toolbar { flex-wrap:wrap; } }
+@media print { body { background:#fff; font-size:10pt; }.print-toolbar { display:none; }.prescription-sheet { width:170mm; max-width:100%; min-height:0; padding:0; margin:0 auto; box-shadow:none; }.medicines thead { display:table-header-group; }.medicines tr,.sign-off { break-inside:avoid; }.letterhead h1 { font-size:13pt; }.identity { font-size:9pt; }.directions { font-size:8.5pt; } }
+
+.pharmacy-logo { position:absolute; top:0; left:0; width:12mm; height:12mm; object-fit:contain; }.letterhead:has(.pharmacy-logo) { padding-left:15mm; padding-right:15mm; }

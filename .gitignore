@@ -1,0 +1,9 @@
+/backend/tmp/
+/backend/output/
+/backend/.backups/
+/backend/.env*
+!/backend/.env.example
+/backend/vendor/
+/backend/node_modules/
+/backend/database/*.sqlite*
+/backend/storage/**/*.log
